@@ -1,0 +1,27 @@
+int Solution::canJump(vector<int> &A)
+ {
+    if(A[0]==0) return 0;
+
+    if(A.size()==1) return 1;
+
+    vector<int >temp(A.size(),0);
+
+    int close=A.size()-1;
+
+    for(int i=A.size()-2;i>=0;i--)
+ 
+   {
+        if(A[i]-close+i>=0)
+ 
+       {
+            close=i;
+ 
+           temp[i]=1;
+
+
+        }
+   
+ }
+
+    return temp[0];
+}
