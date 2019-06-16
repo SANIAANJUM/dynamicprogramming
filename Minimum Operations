@@ -1,0 +1,27 @@
+using namespace std;
+
+int findmin(int m,int n){
+    if(n==0) return 0;
+    if(n==1) return 1;
+    if(n==m) return 0;
+    
+        if(n%2==1){
+            return 1+findmin(m,n-1);
+        }
+        else{
+            return 1+findmin(m,n/2);
+        }
+}
+
+
+int main() {
+	int t;
+	cin>>t;
+	while(t--){
+	    int n;
+	    cin>>n;
+	    //findmin(n);
+	    cout<<findmin(0,n)<<endl;
+	}
+	return 0;
+}
